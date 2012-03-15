@@ -1,0 +1,71 @@
+/* row */
+.full, .half, .third, .fourth, .fifth, .sixth {
+    width:100%;
+    margin:0px auto 10px;
+    position:relative;
+}
+
+/* row clearfix */
+.half,.third,.fourth,.fifth,.sixth:before,
+.half,.third,.fourth,.fifth,.sixth:after { content:""; float:left; clear:both }
+.half,.third,.fourth,.fifth,.sixth       { zoom:1 }
+
+/* column */
+.half   > div,
+.third  > div,
+.fourth > div,
+.fifth  > div,
+.sixth  > div { float:left; margin-right:2.2% }
+
+/* last column, must use div.last */
+div.last { margin-right:0; float:right }
+
+/* grid width */
+.half   > div { width:48.9% }
+.third  > div { width:31.8%  }
+.fourth > div { width:23.35% }
+.fifth  > div { width:18.24% }
+.sixth  > div { width:14.83% }
+
+/* reverse */
+.device-show { display:none }
+.device-hide { display:block }
+
+/* --- mobile grid lt 801 -- */ 
+@media only screen and (max-width: 801px) {
+
+    /* reset */
+    .half, .third, .fourth, .fifth, .sixth {
+        margin:0 auto;
+    }
+    
+    .half   > div,
+    .third  > div,
+    .fourth > div,
+    .fifth  > div,
+    .sixth  > div {
+        width:100%;
+        margin-bottom:10px;
+        overflow:hidden;
+    }
+
+    div.last { float:left }
+
+    /* redefine margin-right */
+    div.last,
+    .device-half,
+    .device-third { margin-right:2.2% }
+
+    .device-half-last,
+    .device-third-last { margin-right:0 !important; float:right !important}
+
+    /* redefinging column width */
+    .device-half,
+    .device-half-last { width:48.9% !important}
+    .device-third,
+    .device-third-last { width:31.8%  !important}
+
+    .device-show { display:block }
+    .device-hide { display:none }
+
+} // max 801

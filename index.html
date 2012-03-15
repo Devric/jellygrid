@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset>
+        <title>Jelly</title>
+        <link rel="stylesheet" href="css/_base_col.css" />
+        <style type="text/css">
+            /* demo layout */
+            .container > .span { width: 70% !important; clear:none }
+            @media only screen and ( max-width:801px ) {
+                .container > .span { width: 100% !important; clear:both }
+            }
+
+            /* demo colors and reset */
+            .half   > div, .third  > div,
+            .fourth > div, .fifth  > div,
+            .sixth  > div { background:#e7e7e7; text-align:center; border-radius:3px }
+
+            .half:hover > div, .third:hover > div,
+            .fourth:hover > div, .fifth:hover > div,
+            .sixth:hover > div { background:#ccc }
+
+            .device-sample > div { background:#e7e7e7 }
+            .container > div { background:transparent !important }
+
+            .device-show { background:#77D7F9 !important }
+            .device-hide { background:#FFC43D !important }
+
+            small { color:#777 }
+            h3 { margin:0 }
+            .container { color:#444 }
+            .half { text-align:center }
+
+        </style>
+    </head>
+    <body>
+        <a href="http://github.com/Devric/jelly" style="position:absolute; left:0; top:0; width:141px; height:141px; cursor:pointer; z-index:50;"><img src="fork.png"  alt="fork with me" /></a>
+
+        <div class="half"><h2>Liquid <a href="http://devric.co.cc/lab/jelly"></a></h2></div>
+
+        <div class="fourth container">
+            <div> <h3>half <small> half in mobile</small></h3> </div>
+            <div class="device-sample span half last">
+                <div class="device-half">half</div>
+                <div class="device-half-last last">half</div>
+            </div>
+        </div>
+
+        <div class="fourth container">
+
+            <div> <h3>half <small> one in mobile</small></h3> </div>
+            <div class="device-sample span half last">
+                <div >half</div>
+                <div class="device-hide last">desktop only</div>
+            </div>
+        </div>
+
+        <div class="fourth container">
+
+            <div> <h3>half <small> third in mobile</small></h3> </div>
+            <div class="device-sample half span last">
+                <div class="device-third">half</div>
+                <div class="device-third last">half</div>
+                <div class="device-third-last device-show last">device only</div>
+            </div>
+        </div>
+
+        <div class="fourth container">
+
+            <div> <h3>thrid <small> two/one in mobile</small></h3> </div>
+            <div class="device-sample third span last">
+                <div class="device-half" >thid</div>
+                <div class="device-half-last">third</div>
+                <div class="last">third</div>
+            </div>
+        </div>
+
+        <div class="fourth container">
+
+            <div> <h3>fourth <small> half in mobile</small></h3> </div>
+            <div class="device-sample fourth span last">
+                <div class="device-half">fourth</div>
+                <div class="device-half-last">fourth</div>
+                <div class="device-half">fourth</div>
+                <div class="device-half-last last">fourth</div>
+            </div>
+        </div>
+
+        <div class="fourth container">
+
+            <div> <h3>default <small> single column in mobile</small></h3> </div>
+
+            <div class="span last">
+                <div class="half">
+                    <div>half</div>
+                    <div class="last">half</div>
+                </div>
+
+                <div class="third">
+                    <div>third</div>
+                    <div>third</div>
+                    <div class="last">third</div>
+                </div>
+                <div class="fourth">
+                    <div>fourth</div>
+                    <div>fourth</div>
+                    <div>fourth</div>
+                    <div class="last">fourth</div>
+                </div>
+                <div class="fifth">
+                    <div>fifth</div>
+                    <div>fifth</div>
+                    <div>fifth</div>
+                    <div>fifth</div>
+                    <div class="last">fifth</div>
+                </div>
+                <div class="sixth">
+                    <div>sixth</div>
+                    <div>sixth</div>
+                    <div>sixth</div>
+                    <div>sixth</div>
+                    <div>sixth</div>
+                    <div class="last">sixth</div>
+                </div>
+        
+            </div>
+
+        </div>
+
+    </body>
+</html>
