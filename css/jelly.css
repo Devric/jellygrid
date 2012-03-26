@@ -6,9 +6,18 @@
 }
 
 /* row clearfix */
-.half,.third,.fourth,.fifth,.sixth:before,
-.half,.third,.fourth,.fifth,.sixth:after { content:""; float:left; clear:both }
-.half,.third,.fourth,.fifth,.sixth       { zoom:1 }
+.half:before, .half:after,
+.third:before, .third:after,
+.fourth:before, .fourth:after,
+.fifth:before, .fifth:after,
+.sixth:before, .sixth:after { content:""; display:table; }
+
+.half:after,
+.third:after,
+.fourth:after,
+.fifth:after,
+.sixth:after, {clear:both;}
+
 
 /* column */
 .half   > div,
