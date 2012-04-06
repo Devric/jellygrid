@@ -2,26 +2,51 @@
 
 ###About
 
-**Only 1 kb** - Cross device column system ( I won't call it a grid systems ), for those who finds all the current grid systems out there are either **bloated (including classes uses) or not powerful** enough, you are at the right place.
+~~**Only 1 kb**~~  Well… **2kb**, - Cross device agile column system ( I won't call it a grid systems ), for those who finds all the current grid systems out there are either **bloated (including classes uses) or not powerful** enough, you are at the right place.
 
 
 This grid designed specifically for cross devices, though it only contains up to 6 columns.
 But honesly, how many people find that more than 6 columns to be useful? For me? rarely… 
 
 ####Class List
+	
+	/* Parrent containers (row)
+	============================ */
+	.full
 	.half
 	.third
 	.fourth
 	.fifth
 	.sixth
 	
-	.device-show
-	.device-hide
+	/* Child classes
+	============================ */
+	
+	/* single column */
+	This can be any element *, eg: div, span, img...
+	
+	/* spans */
+	.two
+	.three
+	.four
+	.five
+	
+	/* mobile child classes */
 	
 	.device-half
-	.device-third
 	.device-half-last
+	
+	.device-third
 	.device-third-last
+	.device-twothird
+	.device-twothird-last
+	
+		
+	/* utility
+	============================ */
+	.device-show
+	.device-hide
+
 
 #####Sample
 Here is an example of Jelly 2 and 6 column:
@@ -51,12 +76,20 @@ So when it gets below 801px, it becomes one column! **but with a few extra mobil
 	.device-hide			// show on desktop only, hide at device
 	.device-show			// show on device only, hide at desktop
 	
-	.device-full			// redefine the column to single
 	.device-half			// redefine the column to two columns
 	.device-third			// redefine the column to three columns
+	.device-twothird        // 2/3
 	
 	.device-half-last		// re-apply cancellation of margin
 	.device-third-last		// re-apply cancallation of margin
+	.device-twothird-last   // canccelation of margin
+	
+######	Why is last and -last used?
+Instead of just parent > `*`:last-child, last also act as float right, which this give you the ability to redefine which element appears last between mobile and desktop. eg: 
+
+**Before** (desktop): 1AA.device-third-last 2BB.device-hide, 2CC.device-twothird-last.last
+	
+**After** (mobile) : 2CC.device-twothird, (2BB is hidden ), 1AA.device-third-last,
 	
 #####Sample
 This redefines the first two column as two column, and last column as full width, or you can use device-hide to get rid of it.
