@@ -5,14 +5,6 @@
     position:relative;
 }
 
-/* row clearfix */
-.half:after,
-.third:after,
-.fourth:after,
-.fifth:after,
-.sixth:after
-{ clear:both; content:"."; display:block; height:0; visibility:hidden; }
-
 /* column */
 .half   > div,
 .third  > div,
@@ -23,15 +15,38 @@
 /* last column, must use div.last */
 div.last { margin-right:0; float:right }
 
-/* grid width */
-.half   > div { width:48.9% }
+/* grid width 
+=============*/
+
+/* single grid */
+.half   > div { width:48.9%  }
 .third  > div { width:31.8%  }
 .fourth > div { width:23.35% }
 .fifth  > div { width:18.24% }
 .sixth  > div { width:14.83% }
 
+/* child span */
+.third > .two    { width:65.8%  }
+
+.fourth > .two   { width:48.9%  }
+.fourth > .three { width:74.25% }
+
+.fifth > .two    { width:38.68% }
+.fifth > .three  { width:59.22% }
+.fifth > .four   { width:79.65% }
+
+.sixth > .two    { width:31.86% }
+.sixth > .three  { width:48.89% }
+.sixth > .four   { width:66% }
+.sixth > .five   { width:83.05% }
+
+.center {
+    margin:0 auto!important;
+    float:none!important;
+}
+
 /* reverse */
-.device-show { display:none }
+.device-show { display:none  }
 .device-hide { display:block }
 
 /* --- mobile grid lt 801 -- */ 
@@ -42,6 +57,7 @@ div.last { margin-right:0; float:right }
         margin:0 auto;
     }
     
+    .device-full,
     .half   > div,
     .third  > div,
     .fourth > div,
@@ -56,9 +72,11 @@ div.last { margin-right:0; float:right }
 
     /* redefine margin-right */
     div.last,
-    .device-full,
     .device-half,
     .device-third { margin-right:2.2% }
+
+    .device-full,
+    .device-center { margin:0 auto!important; float:none!important; display:block!important }
 
     .device-half-last,
     .device-third-last { margin-right:0 !important; float:right !important}
@@ -73,3 +91,11 @@ div.last { margin-right:0; float:right }
     .device-hide { display:none }
 
 }
+
+/* row clearfix */
+.half:after,
+.third:after,
+.fourth:after,
+.fifth:after,
+.sixth:after
+{ clear:both; content:"."; display:block; height:0; visibility:hidden; }
