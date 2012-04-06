@@ -57,6 +57,16 @@ div.last { margin-right:0; float:right }
         margin:0 auto;
     }
     
+    .third > .two,
+    .fourth > .two,
+    .fourth > .three,
+    .fifth > .two,
+    .fifth > .three,
+    .fifth > .four,
+    .sixth > .two,
+    .sixth > .three,
+    .sixth > .four,
+    .sixth > .five,
     .device-full,
     .half   > div,
     .third  > div,
@@ -79,11 +89,16 @@ div.last { margin-right:0; float:right }
     .device-center { margin:0 auto!important; float:none!important; display:block!important }
 
     .device-half-last,
+    .device-twothird-last,
     .device-third-last { margin-right:0 !important; float:right !important}
 
     /* redefinging column width */
     .device-half,
     .device-half-last { width:48.9% !important}
+
+    .device-twothird,
+    .device-twothird-last { width:65.8%  !important}
+
     .device-third,
     .device-third-last { width:31.8%  !important}
 

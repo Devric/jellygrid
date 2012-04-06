@@ -5,199 +5,114 @@
         <title>Jelly</title>
         <link rel="stylesheet" href="css/jelly.css" />
         <style type="text/css">
-            /* demo layout */
-            .container > .span { width: 70% !important; clear:none }
-            @media only screen and ( max-width:801px ) {
-                .container > .span { width: 100% !important; clear:both }
-            }
-
             /* demo colors and reset */
-            .half   > div, .third  > div,
-            .fourth > div, .fifth  > div,
-            .sixth  > div { background:#e7e7e7; text-align:center; border-radius:3px }
+            * { text-align:center; border-radius:3px }
 
-            .half:hover > div, .third:hover > div,
-            .fourth:hover > div, .fifth:hover > div,
-            .sixth:hover > div { background:#ccc }
+            .demo > * { background:#e7e7e7 }
 
-            .device-sample > div { background:#e7e7e7 }
-            .container > div { background:transparent !important }
+            .half:hover .demo > *, .third:hover .demo > *,
+            jfourth:hover .demo > *, .fifth:hover .demo > *,
+            .sixth:hover .demo > * { background:#ccc }
 
             .device-show { background:#77D7F9 !important }
             .device-hide { background:#FFC43D !important }
 
             small { color:#777 }
             h3 { margin:0 }
-            .container { color:#444 }
-            .half { text-align:center }
 
         </style>
     </head>
     <body>
         <a href="http://github.com/Devric/jelly" style="position:absolute; left:0; top:0; width:141px; height:141px; cursor:pointer; z-index:50;"><img src="fork.png"  alt="fork with me" /></a>
 
-        <div class="third">
-                <div class="two">two</div>
-                <div class="last">one</div>
-        </div>
-
-        <div class="fourth">
-                <div class="three">three</div>
-                <div class="last">one</div>
-        </div>
-
-        <div class="fourth">
-                <div class="two">two</div>
-                <div class="two last">two</div>
-        </div>
-
-        <div class="fifth">
-                <div class="two">two</div>
-                <div class="three last">three</div>
-        </div>
-
-        <div class="fifth">
-                <div class="two">two</div>
-                <div>one</div>
-                <div class="two last">two</div>
-        </div>
-
-        <div class="fifth">
-                <div>one</div>
-                <div>one</div>
-                <div class="three last">three</div>
-        </div>
-
-        <div class="fifth">
-                <div>one</div>
-                <div class="four last">four</div>
-        </div>
-
-        <div class="sixth">
-                <div class="">one</div>
-                <div class="two">two</div>
-                <div class="three last">three</div>
-        </div>
-
-        <div class="sixth">
-                <div class="three">three</div>
-                <div class="">one</div>
-                <div class="">one</div>
-                <div class="last">one</div>
-        </div>
-
-        <div class="sixth">
-                <div class="">one</div>
-                <div class="">one</div>
-                <div class="">one</div>
-                <div class="">one</div>
-                <div class="">one</div>
-                <div class="last">one</div>
-        </div>
-
-        <div class="sixth">
-                <div class="two">two</div>
-                <div class="four last">four</div>
-        </div>
-
-        <div class="sixth">
-                <div class="">one</div>
-                <div class="five last">five</div>
-        </div>
-
-        <div class="sixth">
-                <div class="three">three</div>
-                <div class="three last">three</div>
-        </div>
-
-        <div class="sixth">
-                <div class="">one</div>
-                <div class="three">three</div>
-                <div class="two last">two</div>
-        </div>
-        
-
-        <hr/>
-
         <div class="half"><h2>Jelly <a href="http://devric.co.cc/lab/jelly"></a></h2></div>
 
-        <div class="fourth container">
-            <div> <h3>half <small> half in mobile</small></h3> </div>
-            <div class="device-sample span half last">
+        <!-- half/half -->
+        <section class="fourth">
+            <div class=""><h3>half <small> half in mobile</small></h3></div>
+            <div class="three half last demo">
                 <div class="device-half">half</div>
                 <div class="device-half-last last">half</div>
             </div>
-        </div>
+        </section>
 
-        <div class="fourth container">
-
-            <div> <h3>half <small> one in mobile</small></h3> </div>
-            <div class="device-sample span half last">
-                <div >half</div>
+        <!-- half/one -->
+        <section class="fourth">
+            <div class=""> <h3>half <small> one in mobile</small></h3> </div>
+            <div class="three last half demo">
+                <div  class="">half</div>
                 <div class="device-hide last">desktop only</div>
             </div>
-        </div>
+        </section>
 
-        <div class="fourth container">
-
+        <!-- half/third -->
+        <section class="fourth">
             <div> <h3>half <small> third in mobile</small></h3> </div>
-            <div class="device-sample half span last">
+            <div class="three half last demo">
                 <div class="device-third">half</div>
                 <div class="device-third last">half</div>
                 <div class="device-third-last device-show last">device only</div>
             </div>
-        </div>
+        </section>
 
-        <div class="fourth container">
-
+        <!-- third two one -->
+        <section class="fourth">
             <div> <h3>thrid <small> two/one in mobile</small></h3> </div>
-            <div class="device-sample third span last">
+            <div class="three third last demo">
                 <div class="device-half" >thid</div>
                 <div class="device-half-last">third</div>
-                <div class="last">third</div>
+                <div class="last">third / full</div>
             </div>
-        </div>
+        </section>
 
-        <div class="fourth container">
-
+        <!-- fourth half -->
+        <section class="fourth">
             <div> <h3>fourth <small> half in mobile</small></h3> </div>
-            <div class="device-sample fourth span last">
+            <div class="three fourth last demo">
                 <div class="device-half">fourth</div>
                 <div class="device-half-last">fourth</div>
                 <div class="device-half">fourth</div>
                 <div class="device-half-last last">fourth</div>
             </div>
-        </div>
+        </section>
 
-        <div class="fourth container">
+        <!-- 2 + 3 / 1 + 2 -->
+        <section class="fourth">
+            <div> <h3> 2/5 + 3/5 <small> 1/3 + 2/3 in mobile</small></h3> </div>
+            <div class="three fifth last demo">
+                <div class="two device-third">2/5</div>
+                <div class="three last device-twothird-last">3/5</div>
+            </div>
+        </section>
 
+        <!-- default singles -->
+        <section class="fourth">
             <div> <h3>default <small> single column in mobile</small></h3> </div>
-
-            <div class="span last">
-                <div class="half">
+            <div class="three last">
+                <div class="half demo">
                     <div>half</div>
                     <div class="last">half</div>
                 </div>
 
-                <div class="third">
+                <div class="third demo">
                     <div>third</div>
                     <div>third</div>
                     <div class="last">third</div>
                 </div>
-                <div class="fourth">
+                <div class="fourth demo">
                     <div>fourth</div>
                     <div>fourth</div>
                     <div>fourth</div>
                     <div class="last">fourth</div>
                 </div>
-                <div class="fifth">
+                <div class="fifth demo">
                     <div>fifth</div>
                     <div>fifth</div>
                     <div>fifth</div>
                     <div>fifth</div>
                     <div class="last">fifth</div>
                 </div>
-                <div class="sixth">
+                <div class="sixth demo">
                     <div>sixth</div>
                     <div>sixth</div>
                     <div>sixth</div>
@@ -205,10 +120,44 @@
                     <div>sixth</div>
                     <div class="last">sixth</div>
                 </div>
-        
             </div>
 
-        </div>
+        </section>
+
+        <!-- span -->
+        <section class="fourth">
+
+            <!-- third -->
+            <div><h3>col spans</h3></div>
+            <div class="three third last demo">
+                <div class="">1/3</div>
+                <div class="two last">2/3</div>
+            </div>
+
+            <!-- fourth -->
+            <div class="three fourth last demo">
+                <div class="">1/4</div>
+                <div class="three last">3/4</div>
+            </div>
+
+            <div class="three fourth last demo">
+                <div class="two">2/4</div>
+                <div class="two last">2/4</div>
+            </div>
+
+            <!-- fifth -->
+            <div class="three fifth last demo">
+                <div class="two">2/5</div>
+                <div class="three last">3/5</div>
+            </div>
+
+            <!-- sixth -->
+            <div class="three sixth last demo">
+                <div class="three">3/6</div>
+                <div class="three last">3/6</div>
+            </div>
+
+        </section>
 
     </body>
 </html>
