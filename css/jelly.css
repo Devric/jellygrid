@@ -1,91 +1,109 @@
+/* utility 
+==============*/
+
+/* centering the container */
+.center {
+    margin:0 auto!important;
+    float:none!important;
+}
+
+/* hide/show: desktop */
+.device-show { display:none  }
+.device-hide { display:block }
+
+
+/* The Grid 
+=============*/
+
 /* row */
-.full, .half, .third, .fourth, .fifth, .sixth {
+.full {
+    width:100%!important;
+    margin:10px 0;
+}
+
+.half, .third, .fourth, .fifth, .sixth {
     width:100%;
-    margin:0px auto 10px;
+    margin-bottom:10px;
     position:relative;
 }
 
 /* column */
-.half   > div,
-.third  > div,
-.fourth > div,
-.fifth  > div,
-.sixth  > div { float:left; margin-right:2.2% }
+.half   > *,
+.third  > *,
+.fourth > *,
+.fifth  > *,
+.sixth  > * { float:left; margin-right:2.2% }
 
-/* last column, must use div.last */
-div.last { margin-right:0; float:right }
+/* last column, must use .last */
+.last { margin-right:0; float:right }
 
-/* grid width 
-=============*/
+/* column single */
+.half   > * { width:48.9%  }
+.third  > * { width:31.8%  }
+.fourth > * { width:23.35% }
+.fifth  > * { width:18.24% }
+.sixth  > * { width:14.83% }
 
-/* single grid */
-.half   > div { width:48.9%  }
-.third  > div { width:31.8%  }
-.fourth > div { width:23.35% }
-.fifth  > div { width:18.24% }
-.sixth  > div { width:14.83% }
-
-/* child span */
+/* column span */
 .third > .two    { width:65.8%  }
 
 .fourth > .two   { width:48.9%  }
 .fourth > .three { width:74.25% }
 
 .fifth > .two    { width:38.68% }
-.fifth > .three  { width:59.22% }
+.fifth > .three  { width:59.1%  }
 .fifth > .four   { width:79.65% }
 
 .sixth > .two    { width:31.86% }
 .sixth > .three  { width:48.89% }
-.sixth > .four   { width:66% }
+.sixth > .four   { width:66%    }
 .sixth > .five   { width:83.05% }
 
-.center {
-    margin:0 auto!important;
-    float:none!important;
-}
-
-/* reverse */
-.device-show { display:none  }
-.device-hide { display:block }
 
 /* --- mobile grid lt 801 -- */ 
 @media only screen and (max-width: 801px) {
 
-    /* reset */
+    /* reset grid
+    ============== */
+
+    /* reset bottom margin for containers */
     .half, .third, .fourth, .fifth, .sixth {
         margin:0 auto;
     }
     
-    .third > .two,
+    /* re-apply all element width and margins,
+     * lock overflows, so absolute element will not affect the grid */
+    .third  > .two,
     .fourth > .two,
+    .fifth  > .two,
+    .sixth  > .two,
     .fourth > .three,
-    .fifth > .two,
-    .fifth > .three,
-    .fifth > .four,
-    .sixth > .two,
-    .sixth > .three,
-    .sixth > .four,
-    .sixth > .five,
-    .device-full,
-    .half   > div,
-    .third  > div,
-    .fourth > div,
-    .fifth  > div,
-    .sixth  > div {
+    .fifth  > .three,
+    .sixth  > .three,
+    .fifth  > .four,
+    .sixth  > .four,
+    .sixth  > .five,
+    .half   > *,
+    .third  > *,
+    .fourth > *,
+    .fifth  > *,
+    .sixth  > * {
         width:100%;
         margin-bottom:10px;
         overflow:hidden;
     }
 
-    div.last { float:left }
+    /* reset last */
+    .last { float:left }
 
-    /* redefine margin-right */
-    div.last,
+    /* new elements widths 
+     ===========================*/
+
+    /* redefine mobile last : margin-right */
     .device-half,
+    .device-twothird,
     .device-third { margin-right:2.2% }
 
-    .device-full,
     .device-center { margin:0 auto!important; float:none!important; display:block!important }
 
     .device-half-last,
@@ -94,16 +112,17 @@ div.last { margin-right:0; float:right }
 
     /* redefinging column width */
     .device-half,
-    .device-half-last { width:48.9% !important}
+    .device-half-last { width:48.9% }
 
     .device-twothird,
-    .device-twothird-last { width:65.8%  !important}
+    .device-twothird-last { width:65.8% }
 
     .device-third,
-    .device-third-last { width:31.8%  !important}
+    .device-third-last { width:31.8%}
 
+    /* hide/show: mobile */
     .device-show { display:block }
-    .device-hide { display:none }
+    .device-hide { display:none  }
 
 }
 
