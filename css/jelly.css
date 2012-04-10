@@ -39,7 +39,7 @@
 
 /* column single */
 .half   > * { width:48.9%  }
-.third  > * { width:31.8%  }
+.third  > * { width:31.9%  }
 .fourth > * { width:23.35% }
 .fifth  > * { width:18.24% }
 .sixth  > * { width:14.83% }
@@ -112,17 +112,21 @@
 
     /* redefinging column width */
     .device-half,
-    .device-half-last { width:48.9% }
+    .device-half-last { width:48.9%!important }
 
     .device-twothird,
-    .device-twothird-last { width:65.8% }
+    .device-twothird-last { width:65.8%!important }
 
     .device-third,
-    .device-third-last { width:31.8%}
+    .device-third-last { width:31.8%!important }
 
     /* hide/show: mobile */
     .device-show { display:block }
     .device-hide { display:none  }
+
+    .full {
+        margin-top: 0;
+    }
 
 }
 
